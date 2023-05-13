@@ -19,18 +19,18 @@ int i;
 /* (void)av; --> declared a value for it down the line*/
 
 /* Infinite loop for simulating shell input and functionality*/
-while (1)
-{
-printf("%s", input);
-nchars_read = getline(&lineptr, &n, stdin);
+    while (1)
+    {
+        printf("%s", input);
+        nchars_read = getline(&lineptr, &n, stdin);
 
 /* allocates space for lineptr_cpy*/
-lineptr_cpy = malloc(sizeof(char) * nchars_read);
-if (lineptr_cpy == NULL)
-{
+        lineptr_cpy = malloc(sizeof(char) * nchars_read);
+        if (lineptr_cpy == NULL)
+        {
 /*perror("tsh: MEMORY ALLOCATION ERROR");*/
-return (-1);
-}
+            return (-1);
+        }
 
 /* allocates space for lineptr_disp*/
 lineptr_disp = malloc(sizeof(char) * nchars_read);
@@ -45,10 +45,11 @@ strcpy(lineptr_cpy, lineptr);
 strcpy(lineptr_disp, lineptr);
 
 /* checks whether to continue the shell input or exit "ctrl-d" */
-if (nchars_read == -1)
+if (nchars_read == EOF)
 {
 printf("Shell offline...\n");
-return (-1);
+/*return (EOF);*/
+break;
 }
 else
 {
@@ -91,7 +92,7 @@ execmd(av);
 /* frees up allocated memory*/
 free(lineptr);
 free(lineptr_cpy);
-free(av);
+/*free(av);*/
 return (0);
 }
 

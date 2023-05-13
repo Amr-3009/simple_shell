@@ -8,7 +8,8 @@ struct stat buffer;
 
 /* gets the path*/
 path = getenv("PATH");
-
+while(1)
+{
 if (path)
 {
 path_cpy = strdup(path);
@@ -34,19 +35,19 @@ strcat(file_path, "\0");
 /* checking if the path actually exists*/
 if (stat(file_path, &buffer) == 0)
 {
-free(path_cpy);
+/*free(path_cpy);*/
 return (file_path);
 }
 else
 {
-free(file_path);
+/*free(file_path);*/
 /* tokenizing the path string*/
 path_token = strtok(NULL, ":");
 }
 }
 
 /* freeing up allocated memory*/
-free(path_cpy);
+/*free(path_cpy);*/
 
 if (stat(command, &buffer) == 0)
 {
@@ -55,5 +56,8 @@ return (command);
 return (NULL);
 }
 return (NULL);
+}
+free(file_path);
+free(path_cpy);
 }
 
