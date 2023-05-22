@@ -218,8 +218,8 @@ int disp_history(__attribute__((unused)) char **c, __attribute__((unused)) int s
         am = _itoa(counter);
         PROMPT(am);
         free(am);
-        PRINTER(" ");
-        PRINTER(line);
+        PROMPT(" ");
+        PROMPT(line);
     }
     if (line)
         free(line);

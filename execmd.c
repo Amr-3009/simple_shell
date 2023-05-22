@@ -10,20 +10,20 @@
 int builtin_cmd(char **cmd, int state)
 {
     blt_in cmd_list[] = {
-        {"cd", change_dir},
-        {"env", dis_env},
-        {"help", display_help},
-        {"echo", echo_bul},
-        {"history", history_dis},
+        {"cd", c_dir},
+        {"env", disp_env},
+        {"help", disp_help},
+        {"echo", echo_blt},
+        {"history", disp_history},
         {NULL, NULL}};
 
     int i = 0;
 
     while ((cmd_list + 1)->command)
     {
-        if (_strcmp(cmd[0], (bil + i)->command) == 0)
+        if (_strcmp(cmd[0], (cmd_list + i)->command) == 0)
         {
-            return ((bil + i)->fun(cmd, state));
+            return ((cmd_list + i)->fun(cmd, state));
         }
         i++;
     }
@@ -65,7 +65,7 @@ int execmd(char **cmd, char *input, int c, char **argv)
 
         if (execve(*cmd, cmd, environ) == -1)
         {
-            print_error(cmd[0], c, argv);
+            _perror(cmd[0], c, argv);
             free(input);
             free(cmd);
             exit(EXIT_FAILURE);

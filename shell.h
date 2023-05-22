@@ -45,11 +45,12 @@ int disp_history(char **c, int state);
 int n_echo(char **cmd);
 int echo_blt(char **cmd, int state);
 int disp_help(char **cmd, int state);
-int dis_env(char **cmd, int state);
+int disp_env(char **cmd, int state);
 int c_dir(char **cmd, int state);
 void exit_blt(char **cmd, char *input, char **argv, int c);
-void _prerror(char **argv, int c, char **cmd);
+void _perror(char **argv, int c, char **cmd);
 int _strncmp(const char *s1, const char *s2, size_t n);
+char *_getenv(char *name);
 
 /*     Macros     */
 #define PATH_MAX 4096

@@ -6,7 +6,7 @@
  * @cmd: command
  * Return: void
  */
-void _prerror(char **argv, int c, char **cmd)
+void _perror(char **argv, int c, char **cmd)
 {
     char *am = _itoa(c);
 
