@@ -28,3 +28,16 @@ Displays the syntax for the command, or all commands.
 Displays the last typed user .
 * echo [$$] or [$?] or [$PATH]
 Return pid and exit statue and PATH.
+
+##### Features
+It can handle commands:
+Basicly Every Program in `$PATH`
+It Support Single Word like `ls` 
+
+It Handle Path `ls /tmp`
+
+it Handle Options Like `ls -l`
+
+it Handle All Three Togther Like `ls -l /var `
+
+It also can handle comments #
