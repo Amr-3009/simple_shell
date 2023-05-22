@@ -13,7 +13,7 @@ First we compile the program using:
 Then run it using:
 `./hsh`
 
-##### List of built in commands
+### List of built in commands
 * cd [directory]  
 Switch to the specified directory (path).
 * env  
@@ -29,7 +29,7 @@ Displays the last typed user .
 * echo [$$] or [$?] or [$PATH]
 Return pid and exit statue and PATH.
 
-##### Features
+### Features
 It can handle commands:
 Basicly Every Program in `$PATH`
 It Support Single Word like `ls` 
