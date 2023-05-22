@@ -15,7 +15,7 @@ int path_cmd(char **cmd)
     path_tok = _strtok(path, ":");
     while (path_tok != NULL)
     {
-        cmd_path = full_path(*cmd, value);
+        cmd_path = full_path(*cmd, cmd_path);
         if (stat(cmd_path, &buf) == 0)
         {
             *cmd = _strdup(cmd_path);

@@ -14,7 +14,7 @@ int main(__attribute__((unused)) int argc, char **argv)
 
     int index = 0;
     int status = 1;
-    int st = 0;
+    int am = 0;
 
     (void)argc;
 
@@ -47,7 +47,7 @@ int main(__attribute__((unused)) int argc, char **argv)
         }
         else
         {
-            am = execmd(cmd, input, counter, argv);
+            am = execmd(cmd, input, index, argv);
         }
         free(cmd);
         free(input);

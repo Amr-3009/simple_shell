@@ -59,6 +59,13 @@ int check_builtin(char **cmd);
 void hash_handler(char *buff);
 unsigned int check_delim(char c, const char *str);
 char *_strtok(char *str, const char *delim);
+char *full_path(char *token, char *dir_path);
+char *_strdup(char *str);
+char *_strcat(char *dest, char *src);
+void read_file(char *filename, char **argv);
+char *_getline();
+int history(char *input);
+void free_env(char **env);
 /*     Macros     */
 #define PATH_MAX 4096
 #define B_SIZE 1024
