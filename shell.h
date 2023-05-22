@@ -1,6 +1,9 @@
 #ifndef _SHELL_H_
 #define _SHELL_H_
 
+/*      env var       */
+extern char **environ;
+
 /*      Libraries used        */
 #include <stdio.h>
 #include <unistd.h>
@@ -12,7 +15,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <errno.h>
-#include <linux/limts.h>
+/*#include <limts.h>*/
 
 /*       Function Prototypes       */
 int _putchar(char c);
@@ -45,10 +48,14 @@ int disp_help(char **cmd, int state);
 int dis_env(char **cmd, int state);
 int c_dir(char **cmd, int state);
 void exit_blt(char **cmd, char *input, char **argv, int c);
+void _prerror(char **argv, int c, char **cmd);
+int _strncmp(const char *s1, const char *s2, size_t n);
+
 /*     Macros     */
+#define PATH_MAX 4096
 #define B_SIZE 1024
 #define DELIM " \t\r\n\a"
-#define PROMPT(c) (write(1, c, _strlen(c)))
+#define PROMPT(c) (write(STDOUT_FILENO, c, _strlen(c)))
 /* STDOUT_FILENO = 1*/
 
 /*    struct    */

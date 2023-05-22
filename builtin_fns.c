@@ -78,7 +78,7 @@ int c_dir(char **cmd, __attribute__((unused)) int state)
  * Return: 0
  */
 
-int dis_env(__attribute__((unused)) char **cmd, __attribute__((unused)) int state)
+int disp_env(__attribute__((unused)) char **cmd, __attribute__((unused)) int state)
 {
     size_t i;
     int len;
@@ -143,13 +143,13 @@ int echo_blt(char **cmd, int state)
     else if (_strncmp(cmd[1], "$$", 2) == 0)
     {
         print_num(pid);
-        PROMPT('\n');
+        PROMPT("\n");
     }
     else if (_strncmp(cmd[1], "$PATH", 5) == 0)
     {
         path = _getenv("PATH");
         PROMPT(path);
-        PROMPT('\n');
+        PROMPT("\n");
         free(path);
     }
     else
