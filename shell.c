@@ -87,12 +87,12 @@ int check_builtin(char **cmd)
 }
 
 /**
- * creat_env - create array of enviroment variable
+ * create_env - create array of enviroment variable
  * @envi: array of enviroment variable
  * Return: void
  */
 
-void creat_env(char **envi)
+void create_env(char **envi)
 {
     int i;
 
