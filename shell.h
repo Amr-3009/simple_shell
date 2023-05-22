@@ -51,7 +51,14 @@ void exit_blt(char **cmd, char *input, char **argv, int c);
 void _perror(char **argv, int c, char **cmd);
 int _strncmp(const char *s1, const char *s2, size_t n);
 char *_getenv(char *name);
-
+int path_cmd(char **cmd);
+void file_parser(char *line, int counter, FILE *fp, char **argv);
+char **parse_cmd(char *input);
+void file_exit(char **cmd, char *line, FILE *fd);
+int check_builtin(char **cmd);
+void hash_handler(char *buff);
+unsigned int check_delim(char c, const char *str);
+char *_strtok(char *str, const char *delim);
 /*     Macros     */
 #define PATH_MAX 4096
 #define B_SIZE 1024

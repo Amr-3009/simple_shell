@@ -65,7 +65,7 @@ int execmd(char **cmd, char *input, int c, char **argv)
 
         if (execve(*cmd, cmd, environ) == -1)
         {
-            _perror(cmd[0], c, argv);
+            error_handler(cmd[0], c, argv);
             free(input);
             free(cmd);
             exit(EXIT_FAILURE);
@@ -86,6 +86,6 @@ void signal_to_handle(int sig)
 {
     if (sig == SIGINT)
     {
-        PRINTER("\n$ ");
+        PROMPT("\n$ ");
     }
 }
