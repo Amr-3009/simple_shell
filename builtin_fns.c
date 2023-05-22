@@ -135,7 +135,7 @@ int echo_blt(char **cmd, int state)
     char *path;
     unsigned int pid = getppid();
 
-    if (_strcmp(cmd[1], "$?", 2) == 0)
+    if (_strncmp(cmd[1], "$?", 2) == 0)
     {
         print_int(state);
         PROMPT("\n");
