@@ -8,10 +8,10 @@ The goal in this project was to make us understand how a shell works. To single 
 
 ### How to use it
 First we compile the program using:
-'gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh'
+`gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh`
 
 Then run it using:
-'./hsh'
+`./hsh`
 
 ##### List of built in commands
 * cd [directory]  
