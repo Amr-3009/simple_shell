@@ -19,7 +19,7 @@ int builtin_cmd(char **cmd, int state)
 
     int i = 0;
 
-    while ((cmd_list + 1)->command)
+    while ((cmd_list + i)->command)
     {
         if (_strcmp(cmd[0], (cmd_list + i)->command) == 0)
         {

@@ -16,8 +16,6 @@ int main(__attribute__((unused)) int argc, char **argv)
     int status = 1;
     int am = 0;
 
-    (void)argc;
-
     if (argv[1] != NULL)
         read_file(argv[1], argv);
 
@@ -43,6 +41,8 @@ int main(__attribute__((unused)) int argc, char **argv)
             am = builtin_cmd(cmd, am);
             free(cmd);
             free(input);
+            cmd = NULL;
+            input = NULL;
             continue;
         }
         else
@@ -51,6 +51,8 @@ int main(__attribute__((unused)) int argc, char **argv)
         }
         free(cmd);
         free(input);
+        cmd = NULL;
+        input = NULL;
     }
     return (status);
 }
@@ -70,6 +72,7 @@ int check_builtin(char **cmd)
         {"echo", NULL},
         {"history", NULL},
         {NULL, NULL}};
+
     int i = 0;
 
     if (*cmd == NULL)
