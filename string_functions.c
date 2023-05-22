@@ -53,6 +53,7 @@ char *_itoa(unsigned int n)
         n /= 10;
         i++;
     }
+    s[i] = (n % 10) + '0';
     rev_arr(s, len);
     s[i + 1] = '\0';
     return (s);
@@ -258,28 +259,6 @@ char *_strcat(char *dest, char *src)
         src++;
     }
     *dest = '\0';
-    return (s);
-}
-
-/**
- * _strsr - sreaches for a character in string
- * @s: string 1
- * @c: string 2
- * Return: ptr
- */
-
-char *_strsr(char *s, char c)
-{
-
-    do
-    {
-
-        if (*s == c)
-        {
-            break;
-        }
-    } while (*s++);
-
     return (s);
 }
 

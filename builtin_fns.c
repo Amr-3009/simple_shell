@@ -87,7 +87,7 @@ int disp_env(__attribute__((unused)) char **cmd, __attribute__((unused)) int sta
     {
         len = _strlen(environ[i]);
         write(1, environ[i], len);
-        write(1, "\n", 1);
+        write(STDOUT_FILENO, "\n", 1);
     }
     return (0);
 }
@@ -135,7 +135,7 @@ int echo_blt(char **cmd, int state)
     char *path;
     unsigned int pid = getppid();
 
-    if (_strcmp(cmd[1], "$?") == 0)
+    if (_strcmp(cmd[1], "$?", 2) == 0)
     {
         print_int(state);
         PROMPT("\n");

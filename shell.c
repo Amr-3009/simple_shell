@@ -24,7 +24,7 @@ int main(__attribute__((unused)) int argc, char **argv)
     {
         index++;
         if (isatty(STDIN_FILENO))
-            prompt();
+            _prompt();
         input = _getline();
         if (input[0] == '\0')
         {

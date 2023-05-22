@@ -15,7 +15,7 @@ extern char **environ;
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <errno.h>
-/*#include <limts.h>*/
+#include <linux/limits.h>
 
 /*       Function Prototypes       */
 int _putchar(char c);
@@ -27,7 +27,7 @@ char *_itoa(unsigned int n);
 void rev_arr(char *arr, int len);
 int intlen(int num);
 char *_strncpy(char *dest, char *src, int n);
-void prompt(void);
+void _prompt(void);
 void error_handler(char *input, int counter, char **argv);
 int _atoi(char *s);
 void _puts(char *str);
