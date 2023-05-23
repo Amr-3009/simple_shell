@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * _realloc - reallocates memory using malloc and free
- * @ptr: input
- * @prev: old pointer size
- * @new: new pointer size
- * Return: realloc pointers
+ *_realloc - reallocates memory using malloc and free
+ *@ptr: input
+ *@prev: old pointer size
+ *@new: new pointer size
+ *Return: realloc pointers
  */
 
 void *_realloc(void *ptr, unsigned int prev, unsigned int new)
@@ -19,6 +19,7 @@ void *_realloc(void *ptr, unsigned int prev, unsigned int new)
         free(ptr);
         return (NULL);
     }
+
     result = malloc(new);
     if (result == NULL)
         return (NULL);
@@ -32,15 +33,16 @@ void *_realloc(void *ptr, unsigned int prev, unsigned int new)
         _mcpy(result, ptr, prev);
         free(ptr);
     }
+
     return (result);
 }
 
 /**
- * _mcpy - copies memory from a block from another
- * @dest: ip1
- * @src: ip2
- * @n: size
- * Return: pointer
+ *_mcpy - copies memory from a block from another
+ *@dest: ip1
+ *@src: ip2
+ *@n: size
+ *Return: pointer
  */
 
 char *_mcpy(char *dest, char *src, unsigned int n)
@@ -51,14 +53,15 @@ char *_mcpy(char *dest, char *src, unsigned int n)
     {
         dest[i] = src[i];
     }
+
     return (dest);
 }
 
 /**
- * array_fill - Fill An Array By Constant Byte
- * @a: ptr
- * @el: int
- * @len: int
+ *array_fill - Fill An Array By Constant Byte
+ *@a: ptr
+ *@el: int
+ *@len: int
  *Return: ptr
  */
 void *array_fill(void *a, int el, unsigned int len)
@@ -72,5 +75,6 @@ void *array_fill(void *a, int el, unsigned int len)
         p++;
         i++;
     }
+
     return (a);
 }

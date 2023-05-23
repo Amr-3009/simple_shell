@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * read_file - read files
- * @filename: filename
- * @argv: command ran
- * Return: 0
+ *read_file - read files
+ *@filename: filename
+ *@argv: command ran
+ *Return: 0
  */
 
 void read_file(char *filename, char **argv)
@@ -25,6 +25,7 @@ void read_file(char *filename, char **argv)
         counter++;
         file_parser(line, counter, fp, argv);
     }
+
     if (line)
         free(line);
     fclose(fp);
@@ -32,12 +33,12 @@ void read_file(char *filename, char **argv)
 }
 
 /**
- * file_parser - check file commands
- * @line: file line
- * @counter: counter
- * @fp: file descriptor
- * @argv: command ran
- * Return: void
+ *file_parser - check file commands
+ *@line: file line
+ *@counter: counter
+ *@fp: file descriptor
+ *@argv: command ran
+ *Return: void
  */
 
 void file_parser(char *line, int counter, FILE *fp, char **argv)
@@ -64,12 +65,12 @@ void file_parser(char *line, int counter, FILE *fp, char **argv)
 }
 
 /**
- * file_exit - Exit Shell Case Of File
- * @line: file line
- * @counter: counter
- * @fp: file descriptor
- * @argv: command ran
- * Return: void
+ *file_exit - Exit Shell Case Of File
+ *@line: file line
+ *@counter: counter
+ *@fp: file descriptor
+ *@argv: command ran
+ *Return: void
  */
 
 void file_exit(char **cmd, char *line, FILE *fd)
@@ -83,6 +84,7 @@ void file_exit(char **cmd, char *line, FILE *fd)
         fclose(fd);
         exit(errno);
     }
+
     while (cmd[1][i])
     {
         if (_isalpha(cmd[1][i++]) < 0)
@@ -90,6 +92,7 @@ void file_exit(char **cmd, char *line, FILE *fd)
             perror("bad number");
         }
     }
+
     status = _atoi(cmd[1]);
     free(line);
     free(cmd);

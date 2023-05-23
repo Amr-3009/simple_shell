@@ -1,10 +1,10 @@
 #ifndef _SHELL_H_
 #define _SHELL_H_
 
-/*      env var       */
+/*     env var       */
 extern char **environ;
 
-/*      Libraries used        */
+/*     Libraries used        */
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -17,7 +17,7 @@ extern char **environ;
 #include <errno.h>
 #include <linux/limits.h>
 
-/*       Function Prototypes       */
+/*      Function Prototypes       */
 int _putchar(char c);
 void print_num(unsigned int n);
 void print_int(int n);
@@ -66,24 +66,26 @@ void read_file(char *filename, char **argv);
 char *_getline();
 int history(char *input);
 void free_env(char **env);
-/*     Macros     */
+/*    Macros     */
 #define PATH_MAX 4096
 #define B_SIZE 1024
 #define DELIM " \t\r\n\a"
 #define PROMPT(c) (write(STDOUT_FILENO, c, _strlen(c)))
-/* STDOUT_FILENO = 1*/
+/*STDOUT_FILENO = 1*/
 
-/*    struct    */
+/*   struct    */
 /**
- * struct built_in - contains built in to handle and execute functions
- * @command: pointer to char
- * @fun: executable functions
+ *struct built_in - contains built in to handle and execute functions
+ *@command: pointer to char
+ *@fun: executable functions
  */
 
 typedef struct built_in
 {
     char *command;
     int (*fun)(char **line, int am);
-} blt_in;
+}
+
+blt_in;
 
 #endif

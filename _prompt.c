@@ -1,20 +1,20 @@
 #include "shell.h"
 
 /**
- * prompt - waits for user input
+ *prompt - waits for user input
  */
 
 void _prompt(void)
 {
-    PROMPT("SHELLFISH> ");
+    PROMPT("SHELLFISH > ");
 }
 
 /**
- * error_handler - dispalys error with extra information
- * @input: input from user
- * @counter: loop counter
- * @argv: input
- * Return: always void
+ *error_handler - dispalys error with extra information
+ *@input: input from user
+ *@counter: loop counter
+ *@argv: input
+ *Return: always void
  */
 
 void error_handler(char *input, int counter, char **argv)

@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * n_echo - executes normal echo
- * @cmd: command
- * Return: 0 on success, 1 on failure
+ *n_echo - executes normal echo
+ *@cmd: command
+ *Return: 0 on success, 1 on failure
  */
 
 int n_echo(char **cmd)
@@ -18,6 +18,7 @@ int n_echo(char **cmd)
         {
             return (-1);
         }
+
         exit(EXIT_FAILURE);
     }
     else if (pid < 0)
@@ -31,14 +32,15 @@ int n_echo(char **cmd)
             waitpid(pid, &status, WUNTRACED);
         } while (!WIFEXITED(status) && !WIFSIGNALED(status));
     }
+
     return (1);
 }
 
 /**
- * disp_history - displays user input history
- * @c: command
- * @state: input 2
- * Return: 0 on success, 1 on failure
+ *disp_history - displays user input history
+ *@c: command
+ *@state: input 2
+ *Return: 0 on success, 1 on failure
  */
 
 int disp_history(__attribute__((unused)) char **c, __attribute__((unused)) int state)
@@ -55,6 +57,7 @@ int disp_history(__attribute__((unused)) char **c, __attribute__((unused)) int s
     {
         return (-1);
     }
+
     while ((getline(&line, &len, fp)) != -1)
     {
         counter++;
@@ -64,6 +67,7 @@ int disp_history(__attribute__((unused)) char **c, __attribute__((unused)) int s
         PROMPT(" ");
         PROMPT(line);
     }
+
     if (line)
         free(line);
     fclose(fp);

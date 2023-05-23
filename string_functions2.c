@@ -1,11 +1,11 @@
-#include "shell.h"
+#include "main.h"
 
 /**
- * _strncpy - copies n items from string
- * @dest: input 1
- * @src: input 2
- * @n: intput
- * Return: always char
+ *_strncpy - copies n items from string
+ *@dest: input 1
+ *@src: input 2
+ *@n: intput
+ *Return: always char
  */
 
 char *_strncpy(char *dest, char *src, int n)
@@ -18,18 +18,20 @@ char *_strncpy(char *dest, char *src, int n)
         *(dest + i) = *(src + i);
         i++;
     }
+
     while (i < n)
     {
         *(dest + i) = '\0';
         i++;
     }
+
     return (dest);
 }
 
 /**
- * _atoi - convert to int
- * @s: input
- * Return: always int
+ *_atoi - convert to int
+ *@s: input
+ *Return: always int
  */
 
 int _atoi(char *s)
@@ -44,19 +46,21 @@ int _atoi(char *s)
             x *= -1;
         i++;
     }
+
     j = i;
     while ((s[j] >= '0') && (s[j] <= '9'))
     {
         n = (n * 10) + x * ((s[j]) - '0');
         j++;
     }
+
     return (n);
 }
 
 /**
- * _puts - prints a string
- * @str: input
- * return: always void
+ *_puts - prints a string
+ *@str: input
+ *return: always void
  */
 
 void _puts(char *str)
@@ -67,15 +71,16 @@ void _puts(char *str)
     {
         _putchar(str[i]);
     }
+
     _putchar('\n');
     return;
 }
 
 /**
- * _strcmp - compares 2 strings
- * @s1: ip 1
- * @s2: ip 2
- * Return: cmp value 0 if same, otherwise returns difference
+ *_strcmp - compares 2 strings
+ *@s1: ip 1
+ *@s2: ip 2
+ *Return: cmp value 0 if same, otherwise returns difference
  */
 
 int _strcmp(char *s1, char *s2)
@@ -98,13 +103,14 @@ int _strcmp(char *s1, char *s2)
         else
             continue;
     }
+
     return (cmp);
 }
 
 /**
- * _isalpha - checks if c is alphabetical char
+ *_isalpha - checks if c is alphabetical char
  *@c: input
- * Return: 1 if true, o if false
+ *Return: 1 if true, o if false
  */
 
 int _isalpha(int c)

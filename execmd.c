@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * builtin_cmd - executes builtin commands
- * @cmd: input command
- * @state: previous state of execution
- * Return: 0 on success, -1 on fail
+ *builtin_cmd - executes builtin commands
+ *@cmd: input command
+ *@state: previous state of execution
+ *Return: 0 on success, -1 on fail
  */
 
 int builtin_cmd(char **cmd, int state)
@@ -25,18 +25,20 @@ int builtin_cmd(char **cmd, int state)
         {
             return ((cmd_list + i)->fun(cmd, state));
         }
+
         i++;
     }
+
     return (-1);
 }
 
 /**
- * execmd - ex shell commands
- * @cmd: input command
- * @input: user input
- * @c: exe time
- * @argv: command ran
- * Return: always
+ *execmd - ex shell commands
+ *@cmd: input command
+ *@input: user input
+ *@c: exe time
+ *@argv: command ran
+ *Return: always
  */
 
 int execmd(char **cmd, char *input, int c, char **argv)
@@ -70,16 +72,18 @@ int execmd(char **cmd, char *input, int c, char **argv)
             free(cmd);
             exit(EXIT_FAILURE);
         }
+
         return (EXIT_SUCCESS);
     }
+
     wait(&status);
     return (0);
 }
 
 /**
- * signal_to_handle - handles captured signal
- * @sig: input signal
- * Return: void
+ *signal_to_handle - handles captured signal
+ *@sig: input signal
+ *Return: void
  */
 
 void signal_to_handle(int sig)

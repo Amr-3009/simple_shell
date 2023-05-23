@@ -1,8 +1,8 @@
 #include "shell.h"
 
 /**
- * _getline - reads input from user
- * Return: user input
+ *_getline - reads input from user
+ *Return: user input
  */
 
 char *_getline()
@@ -44,15 +44,16 @@ char *_getline()
             }
         }
     }
+
     buff[i] = '\0';
     hash_handler(buff);
     return (buff);
 }
 
 /**
- * hash_handler - removes everthing after #
- * @buff: input
- * Return: always void
+ *hash_handler - removes everthing after #
+ *@buff: input
+ *Return: always void
  */
 
 void hash_handler(char *buff)

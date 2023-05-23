@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * print_uns_num - prints unsigined number
- * @n: unsingined int
- * Return: always void
+ *print_uns_num - prints unsigined number
+ *@n: unsingined int
+ *Return: always void
  */
 
 void print_num(unsigned int n)
@@ -17,9 +17,9 @@ void print_num(unsigned int n)
 }
 
 /**
- * print_int
- * @n: integar
- * Return: always void
+ *print_int
+ *@n: integar
+ *Return: always void
  */
 
 void print_int(int n)
@@ -31,6 +31,7 @@ void print_int(int n)
         _putchar('-');
         x = -x;
     }
+
     if ((x / 10) > 0)
         print_num(x / 10);
 

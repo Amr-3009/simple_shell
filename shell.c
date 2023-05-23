@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * main - simple shell (Shellfish)
- * @argc: argument counter
- * @argv: argument value
- * Return: always
+ *main - simple shell (Shellfish)
+ *@argc: argument counter
+ *@argv: argument value
+ *Return: always
  */
 
 int main(__attribute__((unused)) int argc, char **argv)
@@ -30,6 +30,7 @@ int main(__attribute__((unused)) int argc, char **argv)
         {
             continue;
         }
+
         history(input);
         cmd = parse_cmd(input);
         if (_strcmp(cmd[0], "exit") == 0)
@@ -49,19 +50,21 @@ int main(__attribute__((unused)) int argc, char **argv)
         {
             am = execmd(cmd, input, index, argv);
         }
+
         free(cmd);
         free(input);
         cmd = NULL;
         input = NULL;
     }
+
     return (status);
 }
 
 /**
- * check_builtin - check builtin
+ *check_builtin - check builtin
  *
- * @cmd: command to check
- * Return: 0 on success, -1 on failure
+ *@cmd: command to check
+ *Return: 0 on success, -1 on failure
  */
 
 int check_builtin(char **cmd)
@@ -86,13 +89,14 @@ int check_builtin(char **cmd)
             return (0);
         i++;
     }
+
     return (-1);
 }
 
 /**
- * create_env - create array of enviroment variable
- * @envi: array of enviroment variable
- * Return: void
+ *create_env - create array of enviroment variable
+ *@envi: array of enviroment variable
+ *Return: void
  */
 
 void create_env(char **envi)

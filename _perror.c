@@ -1,10 +1,11 @@
 #include "shell.h"
+
 /**
- *  _prerror - prints custom error
- * @argv: command ran
- * @c: error counter
- * @cmd: command
- * Return: void
+ *_prerror - prints custom error
+ *@argv: command ran
+ *@c: error counter
+ *@cmd: command
+ *Return: void
  */
 void _perror(char **argv, int c, char **cmd)
 {

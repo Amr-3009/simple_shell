@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * _putchar - writes the character to stdout
- * @c: input
- * Return: character
+ *_putchar - writes the character to stdout
+ *@c: input
+ *Return: character
  */
 
 int _putchar(char c)
@@ -12,9 +12,9 @@ int _putchar(char c)
 }
 
 /**
- * _strlen - gets length of string
- * @s: char
- * Return: always int
+ *_strlen - gets length of string
+ *@s: char
+ *Return: always int
  */
 
 int _strlen(char *s)
@@ -30,9 +30,9 @@ int _strlen(char *s)
 }
 
 /**
- * _itoa - converts int to char
- * @n: input
- * Return: always char
+ *_itoa - converts int to char
+ *@n: input
+ *Return: always char
  */
 
 char *_itoa(unsigned int n)
@@ -53,6 +53,7 @@ char *_itoa(unsigned int n)
         n /= 10;
         i++;
     }
+
     s[i] = (n % 10) + '0';
     rev_arr(s, len);
     s[i + 1] = '\0';
@@ -60,10 +61,10 @@ char *_itoa(unsigned int n)
 }
 
 /**
- * rev_arr - Reverses arrays
- * @arr: input array
- * @len: length of array
- * Return: always void
+ *rev_arr - Reverses arrays
+ *@arr: input array
+ *@len: length of array
+ *Return: always void
  */
 
 void rev_arr(char *arr, int len)

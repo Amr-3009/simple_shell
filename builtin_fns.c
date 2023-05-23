@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * exit_blt - exit shell
- * @cmd: command
- * @input: user input
- * @argv: command ran
- * @count: execute count
- * Return: void
+ *exit_blt - exit shell
+ *@cmd: command
+ *@input: user input
+ *@argv: command ran
+ *@count: execute count
+ *Return: void
  */
 
 void exit_blt(char **cmd, char *input, char **argv, int c)
@@ -19,6 +19,7 @@ void exit_blt(char **cmd, char *input, char **argv, int c)
         free(cmd);
         exit(EXIT_SUCCESS);
     }
+
     while (cmd[1][i])
     {
         if (_isalpha(cmd[1][i++]) != 0)
@@ -37,10 +38,10 @@ void exit_blt(char **cmd, char *input, char **argv, int c)
 }
 
 /**
- * c_dir - change directory
- * @cmd: command
- * @state: input 2
- * Return: 0 on success, 1 on failure
+ *c_dir - change directory
+ *@cmd: command
+ *@state: input 2
+ *Return: 0 on success, 1 on failure
  */
 
 int c_dir(char **cmd, __attribute__((unused)) int state)
@@ -68,14 +69,15 @@ int c_dir(char **cmd, __attribute__((unused)) int state)
         setenv("OLDPWD", getenv("PWD"), 1);
         setenv("PWD", cwd, 1);
     }
+
     return (0);
 }
 
 /**
- * disp_env - displays env variable
- * @cmd: command
- * @state: input 2
- * Return: 0
+ *disp_env - displays env variable
+ *@cmd: command
+ *@state: input 2
+ *Return: 0
  */
 
 int disp_env(__attribute__((unused)) char **cmd, __attribute__((unused)) int state)
@@ -89,14 +91,15 @@ int disp_env(__attribute__((unused)) char **cmd, __attribute__((unused)) int sta
         write(1, environ[i], len);
         write(STDOUT_FILENO, "\n", 1);
     }
+
     return (0);
 }
 
 /**
- * disp_help - displays help screen
- * @cmd: command
- * @state: input 2
- * Return: 0 on success, 1 on failure
+ *disp_help - displays help screen
+ *@cmd: command
+ *@state: input 2
+ *Return: 0 on success, 1 on failure
  */
 
 int disp_help(char **cmd, __attribute__((unused)) int state)
@@ -110,6 +113,7 @@ int disp_help(char **cmd, __attribute__((unused)) int state)
         perror("Error");
         return (0);
     }
+
     while (rd > 0)
     {
         rd = read(fd, &c, 1);
@@ -119,15 +123,16 @@ int disp_help(char **cmd, __attribute__((unused)) int state)
             return (-1);
         }
     }
+
     _putchar('\n');
     return (0);
 }
 
 /**
- * echo_blt - echo cases
- * @cmd: command
- * @state: input 2
- * Return: 0 on success, 1 on failure
+ *echo_blt - echo cases
+ *@cmd: command
+ *@state: input 2
+ *Return: 0 on success, 1 on failure
  */
 
 int echo_blt(char **cmd, int state)

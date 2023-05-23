@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * intlen - gets length of integar
- * @n: input int
- * Return: always int
+ *intlen - gets length of integar
+ *@n: input int
+ *Return: always int
  */
 
 int intlen(int num)
@@ -14,14 +14,15 @@ int intlen(int num)
         len++;
         num /= 10;
     }
+
     return (len);
 }
 
 /**
- * _strcpy - copies a string
- * @dest: destination
- * @src: source
- * Return: copy of string
+ *_strcpy - copies a string
+ *@dest: destination
+ *@src: source
+ *Return: copy of string
  */
 
 char *_strcpy(char *dest, char *src)
@@ -34,15 +35,16 @@ char *_strcpy(char *dest, char *src)
         dest[i] = src[i];
         i++;
     }
+
     dest[i] = '\0';
     return (dest);
 }
 
 /**
- * _strcat - adds two strings
- * @dest: string input 1
- * @src: string input 2
- * Return: two strings
+ *_strcat - adds two strings
+ *@dest: string input 1
+ *@src: string input 2
+ *Return: two strings
  */
 
 char *_strcat(char *dest, char *src)
@@ -60,17 +62,18 @@ char *_strcat(char *dest, char *src)
         dest++;
         src++;
     }
+
     *dest = '\0';
     return (s);
 }
 
 /**
- * _strncmp - compares n characters in 2 strings
- * @s1: string input
- * @s2: string input
- * @n: characters to compare
+ *_strncmp - compares n characters in 2 strings
+ *@s1: string input
+ *@s2: string input
+ *@n: characters to compare
  *
- * Return: 1 if different
+ *Return: 1 if different
  */
 
 int _strncmp(const char *s1, const char *s2, size_t n)
@@ -86,13 +89,14 @@ int _strncmp(const char *s1, const char *s2, size_t n)
             return (1);
         }
     }
+
     return (0);
 }
 
 /**
- * _strdup - duplicates a string
- * @str:String
- * Return: Duplicate String Failed Null
+ *_strdup - duplicates a string
+ *@str:String
+ *Return: Duplicate String Failed Null
  */
 
 char *_strdup(char *str)
