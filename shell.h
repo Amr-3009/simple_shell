@@ -66,6 +66,7 @@ void read_file(char *filename, char **argv);
 char *_getline();
 int history(char *input);
 void free_env(char **env);
+int execmd2(char **cmd, char *input, int c, char **argv);
 /*    Macros     */
 #define PATH_MAX 4096
 #define B_SIZE 1024
@@ -75,17 +76,16 @@ void free_env(char **env);
 
 /*   struct    */
 /**
- *struct built_in - contains built in to handle and execute functions
- *@command: pointer to char
- *@fun: executable functions
- */
+*struct built_in - contains built in to handle and execute functions
+*@command: pointer to char
+*@fun: executable functions
+*/
 
 typedef struct built_in
 {
-    char *command;
-    int (*fun)(char **line, int am);
-}
-
-blt_in;
+char *command;
+int (*fun)(char **line, int am);
+} blt_in;
 
 #endif
+
